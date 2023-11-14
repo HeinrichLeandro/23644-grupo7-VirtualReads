@@ -26,7 +26,7 @@ function Tarjeta() {
             </div>
         </div>
 
-        <div class="card mb-3" className='tarjeta'>
+        <div class="card mb-3" className='tarjeta tarjeta2'>
             <div class="row g-0">
                 <div class="col-md-6">
                     <img src="https://i.pinimg.com/736x/81/c0/8b/81c08b81cfd5d42f429d9047567ce16f.jpg" class="img-fluid rounded-start" alt="harry potter" />

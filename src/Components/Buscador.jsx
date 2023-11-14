@@ -6,13 +6,13 @@ function Buscador() {
     <div className='buscador'>
         <nav class="navbar">
             <div class="container-fluid">
-                <img src="https://images.vexels.com/media/users/3/143466/isolated/preview/b47bfb19d11e66c3be00ccb0632047ce-lupa-simple.png" width="40" height="40" />
+                <img src="https://images.vexels.com/media/users/3/143466/isolated/preview/b47bfb19d11e66c3be00ccb0632047ce-lupa-simple.png" class="img-fluid" width="40" height="40" />
                 <form class="d-flex mt-3" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"/>
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBuscador" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span ><img src="https://cdn-icons-png.flaticon.com/512/6526/6526846.png" class="img-fluid"  width="40" height="40"/></span>
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasBuscador" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
