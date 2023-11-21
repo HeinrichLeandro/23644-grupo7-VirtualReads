@@ -21,14 +21,13 @@ function Navbar() {
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#"> <img src="https://cdn.icon-icons.com/icons2/3106/PNG/512/in_door_communication_enter_log_in_login_icon_191647.png" width="30" height="30"/>Iniciar sesión</a>
-          </li>
+        <div class="mb-3">
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+          <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"></input>
+          </div>
+          <button type="button" class="btn btn-light">Iniciar sesion</button>
           <li class="nav-item">
             <a class="nav-link" href="#"> <img src="https://static.vecteezy.com/system/resources/thumbnails/000/550/980/small/user_icon_001.jpg" width="30" height="30"/> Registrarse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"> <img src="https://cdn-icons-png.flaticon.com/512/1250/1250678.png" width="30" height="30"/> Cerrar sesión</a>
           </li>
         </ul>
       </div>
