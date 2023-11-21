@@ -22,8 +22,9 @@ function Navbar() {
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
         <div class="mb-3">
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-          <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"></input>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Nombre de usuario"/>
+          <br/>
+          <input type="password" placeholder="Contraseña" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"></input>
           </div>
           <button type="button" class="btn btn-light">Iniciar sesion</button>
           <li class="nav-item">

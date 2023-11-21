@@ -4,6 +4,9 @@ import React ,{useState}from "react";
 function Buscador({onBookData}) {
 const [search,setSearch]=useState("");
 const [genre, setGenre] = useState('Género');
+const [year, setYear] = useState('Año de publicación');
+const [author, setAuthor] = useState('Autor');
+const [language, setLanguage] = useState('Idioma');
 //Función para buscar los libros
 function buscarLibros(){
     // var search = document.getElementById('searchInput').value;
@@ -11,6 +14,9 @@ function buscarLibros(){
     'https://www.googleapis.com/books/v1/volumes?q=' +
     search + 
     (genre !== 'Género' ? `+subject:${genre}` : '')+
+    (year !== 'Año de publicación' ? `+publishedDate=${year}` : '') +
+    (author !== 'Autor' ? `+inauthor:${author}` : '') +
+    (language !== 'Idioma' ? `+language:${language}` : '') +
     `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=2`;
 
     //  +
@@ -75,12 +81,12 @@ function buscarLibros(){
                             </select>
                             <br/>
 
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" onChange={(e) => setYear(e.target.value)}>
                                 <option selected>Año de publicación</option>
-                                <option value="1">2000</option>
-                                <option value="2">2001</option>
-                                <option value="3">2002</option>
-                                <option value="4">2003</option>
+                                <option value="2000">2000</option>
+                                <option value="2001">2001</option>
+                                <option value="2002">2002</option>
+                                <option value="2003">2003</option>
                             </select>
                             <br/>
 
@@ -93,21 +99,18 @@ function buscarLibros(){
                             </select>
                             <br/>
 
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Autor</option>
-                                <option value="1">J. K. Rowling</option>
-                                <option value="2">J. R. R. Tolkien</option>
-                                <option value="3">George R. R. Martin</option>
-                                <option value="4">Stephen King</option>
-                            </select>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label float-start px-2">Autor</label>
+                                <input type="text" class="form-control" aria-describedby="Default text example" onChange={(e) => setAuthor(e.target.value)} />
+                            </div>
                             <br/>
 
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" onChange={(e) => setLanguage(e.target.value)}>
                                 <option selected>Idioma</option>
-                                <option value="1">Inglés</option>
-                                <option value="2">Español</option>
-                                <option value="3">Portugués</option>
-                                <option value="4">Francés</option>
+                                <option value="en">Inglés</option>
+                                <option value="es">Español</option>
+                                <option value="pt">Portugués</option>
+                                <option value="fr">Francés</option>
                             </select>
                             <br/>
 
