@@ -3,11 +3,25 @@ import React ,{useState}from "react";
     
 function Buscador({onBookData}) {
 const [search,setSearch]=useState("");
+const [genre, setGenre] = useState('Género');
 //Función para buscar los libros
 function buscarLibros(){
     // var search = document.getElementById('searchInput').value;
-    
-    fetch('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=4')
+    const apiUrl =
+    'https://www.googleapis.com/books/v1/volumes?q=' +
+    search + 
+    (genre !== 'Género' ? `+subject:${genre}` : '')+
+    `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=4`;
+
+    //  +
+    // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +
+    // (year !== 'Año de publicación' ? `&publishedDate=${year}` : '') +
+    // (isbn !== 'Codigo ISBN' ? `&isbn=${isbn}` : '') +
+    // (author !== 'Autor' ? `&inauthor=${author}` : '') +
+    // (language !== 'Idioma' ? `&language=${language}` : '') +
+    // (edition !== 'Edición' ? `&edition=${edition}` : '');
+
+    fetch(apiUrl)
       .then(response => {
         if (!response.ok) {
           throw new Error('Error al obtener los datos.');
@@ -44,11 +58,11 @@ function buscarLibros(){
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">                            
 
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example"onChange={(e) => setGenre(e.target.value)} >
                                 <option selected>Género</option>
-                                <option value="1">Fantasía</option>
-                                <option value="2">Misterio</option>
-                                <option value="3">Religión</option>
+                                <option value="fantasy">Fantasía</option>
+                                <option value="mystery">Misterio</option>
+                                <option value="religion">Religión</option>
                             </select>
                             <br/>
 
@@ -109,7 +123,7 @@ function buscarLibros(){
                         </ul>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                         <button type="button" class="btn btn-secondary">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Aplicar</button>
+                        <button type="button" class="btn btn-primary" onClick={buscarLibros}>Aplicar</button>
                         </div>
       </div>
     </div>
