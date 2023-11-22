@@ -24,6 +24,10 @@
     margin-top:2%;
 }
 
+.imgLibro{
+    height: 300px;
+}
+
 @media only screen and (max-width: 768px) {
     .conternedortarj{
 
