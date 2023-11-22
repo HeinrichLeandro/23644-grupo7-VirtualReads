@@ -1,5 +1,8 @@
 import './Estilos.css'
 import React ,{useState}from "react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
     
 function Buscador({onBookData}) {
 const [search,setSearch]=useState("");
@@ -14,7 +17,7 @@ function buscarLibros(){
     const apiUrl =
     'https://www.googleapis.com/books/v1/volumes?q=' +
     search +
-    (genre !== 'Género' ? `+subject:${genre}` : '')+
+    (genre !== 'Género' ? `+subject:${genre}` : '') +
     (year !== 'Año de publicación' ? `&before:1+ene+${year}` : '') +
     (year2 !== 'Año de publicación2' ? `&after:1+ene+${year2}` : '') +
     (author !== 'Autor' ? `+inauthor:${author}` : '') +
@@ -79,6 +82,8 @@ function buscarLibros(){
           
         
         };
+        const [startDate, setStartDate] = useState(new Date());
+        const [startDate2, setStartDate2] = useState(new Date());
   return ( 
     <div className='buscador'>
         <nav class="navbar">
@@ -119,22 +124,13 @@ function buscarLibros(){
                             </select>
                             <br/>
 
-                            <select class="form-select" aria-label="Default select example" onChange={(e) => setYear2(e.target.value)}>
-                                <option selected>Año de publicación inicial</option>
-                                <option value="2000">2000</option>
-                                <option value="2001">2001</option>
-                                <option value="2002">2002</option>
-                                <option value="2003">2003</option>
-                            </select>
+
+                            <DatePicker selected={startDate2} onChange={(date) => setStartDate2(date) && setYear2(date.target.value)} showYearPicker dateFormat="yyyy" />
+
                             <br/>
 
-                            <select class="form-select" aria-label="Default select example" onChange={(e) => setYear(e.target.value)}>
-                                <option selected>Año de publicación final</option>
-                                <option value="2000">2000</option>
-                                <option value="2001">2001</option>
-                                <option value="2002">2002</option>
-                                <option value="2003">2003</option>
-                            </select>
+                            <DatePicker selected={startDate} onChange={(date) => setStartDate(date) && setYear(date.target.value)} showYearPicker dateFormat="yyyy" />
+
                             <br/>
 
                             <select class="form-select" aria-label="Default select example">
