@@ -7,10 +7,10 @@ import "react-datepicker/dist/react-datepicker.css";
 function Buscador({onBookData}) {
 const [search,setSearch]=useState("");
 const [genre, setGenre] = useState('Género');
-const [year, setYear] = useState('Año de publicación');
-const [year2, setYear2] = useState('Año de publicación2');
 const [author, setAuthor] = useState('Autor');
 const [language, setLanguage] = useState('Idioma');
+const [startDate, setStartDate] = useState(new Date());
+const [startDate2, setStartDate2] = useState(new Date());
 //Función para buscar los libros
 function buscarLibros(){
     // var search = document.getElementById('searchInput').value;
@@ -18,8 +18,8 @@ function buscarLibros(){
     'https://www.googleapis.com/books/v1/volumes?q=' +
     search +
     (genre !== 'Género' ? `+subject:${genre}` : '') +
-    (year !== 'Año de publicación' ? `&before:1+ene+${year}` : '') +
-    (year2 !== 'Año de publicación2' ? `&after:1+ene+${year2}` : '') +
+    (startDate !== 'Año de publicación' ? `+before:1+ene+${startDate.getFullYear()}` : '') +
+    (startDate2 !== 'Año de publicación2' ? `+after:1+ene+${startDate2.getFullYear()}` : '') +
     (author !== 'Autor' ? `+inauthor:${author}` : '') +
     (language !== 'Idioma' ? `&langRestrict=${language}` : '') +
     `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=2`;
@@ -82,8 +82,7 @@ function buscarLibros(){
           
         
         };
-        const [startDate, setStartDate] = useState(new Date());
-        const [startDate2, setStartDate2] = useState(new Date());
+
   return ( 
     <div className='buscador'>
         <nav class="navbar">
@@ -125,11 +124,11 @@ function buscarLibros(){
                             <br/>
 
 
-                            <DatePicker selected={startDate2} onChange={(date) => setStartDate2(date) && setYear2(date.target.value)} showYearPicker dateFormat="yyyy" />
+                            <DatePicker selected={startDate2} onChange={(date) => setStartDate2(date)} showYearPicker dateFormat="yyyy"  />
 
                             <br/>
 
-                            <DatePicker selected={startDate} onChange={(date) => setStartDate(date) && setYear(date.target.value)} showYearPicker dateFormat="yyyy" />
+                            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} showYearPicker dateFormat="yyyy"  />
 
                             <br/>
 
