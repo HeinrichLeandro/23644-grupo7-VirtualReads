@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Navbar() {
   return (
@@ -21,15 +21,12 @@ function Navbar() {
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-        <div class="mb-3">
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Nombre de usuario"/>
-          <br/>
-          <input type="password" placeholder="Contraseña" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"></input>
-          </div>
-          <button type="button" class="btn btn-light">Iniciar sesion</button>
           <li class="nav-item">
-            <a class="nav-link" href="#"> <img src="https://static.vecteezy.com/system/resources/thumbnails/000/550/980/small/user_icon_001.jpg" width="30" height="30"/> Registrarse</a>
+            <a class="nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión</a>
           </li>
+          {/* <li class="nav-item">
+            <a class="nav-link" href="/login" > <img src="https://static.vecteezy.com/system/resources/thumbnails/000/550/980/small/user_icon_001.jpg" width="30" height="30"/> Registrarse</a>
+          </li> */}
         </ul>
       </div>
     </div>
