@@ -18,8 +18,9 @@ function buscarLibros(){
     'https://www.googleapis.com/books/v1/volumes?q=' +
     search +
     (genre !== 'Género' ? `+subject:${genre}` : '') +
-    (startDate !== 'Año de publicación' ? `+before:1+ene+${startDate.getFullYear()}` : '') +
-    (startDate2 !== 'Año de publicación2' ? `+after:1+ene+${startDate2.getFullYear()}` : '') +
+    (startDate.getFullYear !== '2023' ? `+before:1+ene+${startDate.getFullYear()}` : '') +
+    (startDate2.getFullYear !== '2023' ? `+after:1+ene+${startDate2.getFullYear()}` : '') +
+  
     (author !== 'Autor' ? `+inauthor:${author}` : '') +
     (language !== 'Idioma' ? `&langRestrict=${language}` : '') +
     `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=2`;
