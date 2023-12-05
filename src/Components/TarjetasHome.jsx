@@ -3,9 +3,44 @@ import React from 'react';
 
 
 
-function Tarjeta({ book}) {
+function masVistos({onBookData}){
+    // var search = document.getElementById('searchInput').value;
+    const apiUrl =
+    'https://www.googleapis.com/books/v1/volumes?q=a' + `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=2`;
+
+    //  +
+    // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +
+    // (year !== 'Año de publicación' ? `&publishedDate=${year}` : '') +
+    // (isbn !== 'Codigo ISBN' ? `&isbn=${isbn}` : '') +
+    // (author !== 'Autor' ? `&inauthor=${author}` : '') +
+    // (language !== 'Idioma' ? `&language=${language}` : '') +
+    // (edition !== 'Edición' ? `&edition=${edition}` : '');
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al obtener los datos.');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Respuesta de la API:', data);
+        onBookData(data.items);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    
+      
+    
+    };
+
+
+function TarjetasHome({ book }) {
   return (
     <div className='conternedortarj'>
+        <button onClick={masVistos}>hola</button>
       {book.map((libro, index) => ( //Mapeo de la cantidad de items que devuelve la API
         <div key={index} className={`card mb-3 tarjeta${index + 1}`}>
           <div className="row g-0">
@@ -30,8 +65,7 @@ function Tarjeta({ book}) {
         </div>
       ))}
     </div>
-    
   );
 }
 
-export default Tarjeta;
+export default TarjetasHome;

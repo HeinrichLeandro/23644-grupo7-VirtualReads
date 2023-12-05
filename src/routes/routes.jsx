@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Home } from '../pages/Home';
 import { Login } from '../pages/Login';
+import { Buscar } from '../pages/Buscar';
 import { UserAuth } from '../context/AuthContext';
 
 export function MisRutas() {
@@ -14,6 +15,7 @@ export function MisRutas() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+        <Route path="/buscar" element={<RequireAuth><Buscar /></RequireAuth>} />
         <Route path="/login" element={<Login />}/>
       </Routes>
     </BrowserRouter>

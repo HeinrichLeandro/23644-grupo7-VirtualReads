@@ -1,6 +1,7 @@
 import './Estilos.css'
 import React ,{useState}from "react";
 import DatePicker from "react-datepicker";
+import { Link } from 'react-router-dom';
 
 import "react-datepicker/dist/react-datepicker.css";
     
@@ -23,7 +24,7 @@ function buscarLibros(){
   
     (author !== 'Autor' ? `+inauthor:${author}` : '') +
     (language !== 'Idioma' ? `&langRestrict=${language}` : '') +
-    `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=2`;
+    `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=16`;
 
     //  +
     // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +
@@ -56,7 +57,7 @@ function buscarLibros(){
         const apiUrl =
         'https://www.googleapis.com/books/v1/volumes?q=' +
         search +
-        `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=2`;
+        `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=16`;
     
         //  +
         // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +
@@ -83,6 +84,7 @@ function buscarLibros(){
           
         
         };
+      
 
   return ( 
     <div className='buscador'>
@@ -91,7 +93,7 @@ function buscarLibros(){
                 <img src="https://images.vexels.com/media/users/3/143466/isolated/preview/b47bfb19d11e66c3be00ccb0632047ce-lupa-simple.png" class="img-fluid" width="30" height="30" />
                 <form class="d-flex mt-3" role="search">
                     <input id='searchInput' class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" value={search} onChange={e=>setSearch(e.target.value)}/>
-                    <button class="btn btn-outline-success" onClick={busquedaRapida}>Buscar</button>
+                    <Link to='/buscar'><button class="btn btn-outline-success" onClick={busquedaRapida}>Buscar</button> </Link>
                 </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBuscador" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span ><img src="https://cdn-icons-png.flaticon.com/512/6526/6526846.png" class="img-fluid"  width="30" height="30"/></span>
@@ -168,7 +170,7 @@ function buscarLibros(){
 
                         </ul>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                        <button type="button" class="btn btn-primary" onClick={buscarLibros}>Aplicar</button>
+                        <Link to='/buscar'><button type="button" class="btn btn-primary" onClick={buscarLibros}>Aplicar</button></Link>
                         </div>
       </div>
     </div>
