@@ -19,9 +19,9 @@ export function Home() {
 
       <Buscador onBookData={handleBookData} />
 
-      <Recomendados />
+      <Recomendados onBookData={handleBookData} />
 
-      <TarjetasHome onBookData={handleBookData} book={bookData} />
+      <TarjetasHome book={bookData} />
     </div>
   )
 }
