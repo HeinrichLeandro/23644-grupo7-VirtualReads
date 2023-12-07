@@ -22,7 +22,7 @@ function buscarLibros(){
     (startDate.getFullYear !== '2023' ? `+before:1+ene+${startDate.getFullYear()}` : '') +
     (startDate2.getFullYear !== '2023' ? `+after:1+ene+${startDate2.getFullYear()}` : '') +
   
-    (author !== 'Autor' ? `+inauthor:${author}` : '') +
+    (author !== 'Autor' ? `&inauthor:${author}` : '') +
     (language !== 'Idioma' ? `&langRestrict=${language}` : '') +
     `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=16`;
 
