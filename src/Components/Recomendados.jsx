@@ -9,7 +9,7 @@ function Recomendados({onBookData}) {
 
     // var search = document.getElementById('searchInput').value;
     const apiUrl =
-    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=2' ;
+    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=3' ;
 
     //  +
     // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +

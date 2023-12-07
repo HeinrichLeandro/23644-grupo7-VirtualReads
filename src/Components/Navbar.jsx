@@ -1,5 +1,7 @@
 import React from 'react';
 import { UserAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
+import { Home } from '../pages/Home';
 function Navbar() {
   const {logOut} = UserAuth();
 
@@ -19,7 +21,7 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <a className="navbar-brand" href="#">VirtualREADS</a>
+          <Link to={"/"}><a className="navbar-brand" href="#">VirtualREADS</a></Link>
 
           <a className="navbar-brand" href="#">
             <img src="https://static.vecteezy.com/system/resources/thumbnails/000/550/980/small/user_icon_001.jpg" width="40" height="40" alt="imagen" />

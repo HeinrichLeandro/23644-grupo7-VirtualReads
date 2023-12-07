@@ -5,7 +5,7 @@ import React from 'react';
 
 function Tarjeta({ book}) {
   return (
-    <div className='conternedortarj'>
+    <div className='contenedortarj'>
       {book.map((libro, index) => ( //Mapeo de la cantidad de items que devuelve la API
         <div key={index} className={`card mb-3 tarjeta${index + 1}`}>
           <div className="row g-0">

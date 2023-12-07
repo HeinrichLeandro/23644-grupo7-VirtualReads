@@ -1,6 +1,11 @@
-.conternedortarj{
+.contenedortarj{
 
     display: inline-flex;
+}
+
+.contenedorHome{
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .tarjeta{
@@ -8,6 +13,10 @@
     margin-left: 5%;
     margin-right: 5%;
     max-width: 800px;
+}
+
+.tarjHome{
+    
 }
 
 .buscador{
@@ -29,7 +38,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .conternedortarj{
+    .contenedortarj{
 
         display: block;
     }
