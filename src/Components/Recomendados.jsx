@@ -3,8 +3,10 @@ import React from 'react'
 import { useEffect } from 'react'
 
 function Recomendados({onBookData}) {
+
+  useEffect(() => {
     
-function masVistos(){
+
     // var search = document.getElementById('searchInput').value;
     const apiUrl =
     'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=2' ;
@@ -33,9 +35,9 @@ function masVistos(){
       });
 
       
+  
 
-    };
-    window.afterAll = masVistos()
+  },[]);
 
 
 
