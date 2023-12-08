@@ -1,6 +1,8 @@
 .contenedortarj{
-
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 10px;
+    justify-content:center;
 }
 
 .contenedorHome{
@@ -48,6 +50,10 @@
     }
 
     .tarjeta2{
+        display:none;
+    }
+
+    .tarjeta3{
         display:none;
     }
 

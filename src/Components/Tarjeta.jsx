@@ -8,7 +8,8 @@ function Tarjeta({ book}) {
   
 
   return (
-    <div className='contenedortarj grid'>
+    <div>
+    <div className='contenedortarj grid container'>
       {book.map((libro, index) => ( //Mapeo de la cantidad de items que devuelve la API
         <div key={index} className={`card mb-3 tarjeta${index + 1}`}>
           <div className="row g-0">
@@ -31,7 +32,18 @@ function Tarjeta({ book}) {
             </div>
           </div>
         </div>
+        
       ))}
+      </div>
+      <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+    </nav>
     </div>
     
   );
