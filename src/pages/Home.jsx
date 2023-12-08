@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar';
 import Buscador from '../Components/Buscador';
 import TarjetasHome from '../Components/TarjetasHome';
 import Recomendados from '../Components/Recomendados';
+import Tarjeta from '../Components/Tarjeta';
 
 
 

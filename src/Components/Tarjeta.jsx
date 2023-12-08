@@ -1,9 +1,12 @@
 import './Estilos.css';
 import React from 'react';
-
+import { useEffect } from 'react'
+import {Buscador} from './Buscador';
 
 
 function Tarjeta({ book}) {
+  
+
   return (
     <div className='contenedortarj grid'>
       {book.map((libro, index) => ( //Mapeo de la cantidad de items que devuelve la API

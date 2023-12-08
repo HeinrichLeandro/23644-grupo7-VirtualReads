@@ -69,6 +69,36 @@ function Recomendados({onBookData}) {
 
   }
 
+  function relevancia(){
+
+    const apiUrl =
+    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=3' ;
+
+    //  +
+    // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +
+    // (year !== 'Año de publicación' ? `&publishedDate=${year}` : '') +
+    // (isbn !== 'Codigo ISBN' ? `&isbn=${isbn}` : '') +
+    // (author !== 'Autor' ? `&inauthor=${author}` : '') +
+    // (language !== 'Idioma' ? `&language=${language}` : '') +
+    // (edition !== 'Edición' ? `&edition=${edition}` : '');
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al obtener los datos.');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Respuesta de la API:', data);
+        onBookData(data.items);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+  }
+
 
 
   return ( 
@@ -76,7 +106,7 @@ function Recomendados({onBookData}) {
 
     <ul class="nav nav-underline justify-content-center">
         <li class="nav-item">
-            <a class="nav-link link-dark" aria-current="page" href="#">Recomendados</a>
+            <a class="nav-link link-dark" onClick={relevancia} aria-current="page" href="#">Recomendados</a>
         </li>
         <li class="nav-item">
             <a class="nav-link link-dark" href="#">Mas Vendidos</a>

@@ -3,7 +3,7 @@ import './Estilos.css';
 import React from 'react';
 
 
-function TarjetasHome({ book }) {
+function TarjetasHome({book}) {
   return (
     <div className='contenedortarj contenedorHome'>
       {book.map((libro, index) => ( //Mapeo de la cantidad de items que devuelve la API
