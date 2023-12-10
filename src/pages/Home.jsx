@@ -5,24 +5,28 @@ import TarjetasHome from '../Components/TarjetasHome';
 import Recomendados from '../Components/Recomendados';
 import Tarjeta from '../Components/Tarjeta';
 
-
-
-export function Home() {
+// Home.jsx
+export function Home({ onCardClick }) {
   const [bookData, setBookData] = useState([]);
-  // Función para recibir los datos de búsqueda desde Buscador
+  
   const handleBookData = (data) => {
     setBookData(data);
+  };
+  const handleCardClick = (book) => {
+    const isbn = book.volumeInfo.industryIdentifiers?.[0]?.identifier; // Obtén el ISBN del libro
+    onCardClick(isbn); // Llama a la función proporcionada desde las props con el ISBN
+    // También puedes navegar a la página Book directamente aquí si es necesario
   };
 
   return (
     <div>
       <Navbar />
-
       <Buscador onBookData={handleBookData} />
-
       <Recomendados onBookData={handleBookData} />
-
-      <TarjetasHome book={bookData} />
+      <TarjetasHome book={bookData} onCardClick={handleCardClick} />
     </div>
-  )
+  );
 }
+
+
+
