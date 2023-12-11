@@ -2,6 +2,7 @@ import React, { useState }from 'react';
 import Navbar from '../Components/Navbar';
 import Buscador from '../Components/Buscador';
 import Tarjeta from '../Components/Tarjeta';
+import Footer from '../Components/Footer';
 
 
 
@@ -19,6 +20,8 @@ export function Buscar() {
       <Buscador onBookData={handleBookData} />
 
       <Tarjeta book={bookData} />
+      
+      <Footer/>
     </div>
   )
 }

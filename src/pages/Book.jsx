@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import Buscador from '../Components/Buscador';
+import Footer from '../Components/Footer';
 import { useParams } from 'react-router-dom';
 
 export function Book({ selectedBook }) {
@@ -58,6 +59,7 @@ export function Book({ selectedBook }) {
       ) : (
         <p>Libro no encontrado</p>
       )}
+      <Footer/>
     </div>
   );
 }

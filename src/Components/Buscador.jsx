@@ -89,16 +89,16 @@ function buscarLibros(){
   return ( 
     <div className='buscador'>
         <nav class="navbar">
-            <div class="container-fluid">
+            <div class="container-fluid colorBuscador">
                 <img src="https://images.vexels.com/media/users/3/143466/isolated/preview/b47bfb19d11e66c3be00ccb0632047ce-lupa-simple.png" class="img-fluid" width="30" height="30" />
                 <form class="d-flex mt-3" role="search">
                     <input id='searchInput' class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" value={search} onChange={e=>setSearch(e.target.value)}/>
-                    <Link to='/buscar' onClick={busquedaRapida}><button class="btn btn-outline-success">Buscar</button> </Link>
+                    <Link to='/buscar' onClick={busquedaRapida}><button class="btn btn-outline-dark">Buscar</button> </Link>
                 </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBuscador" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span ><img src="https://cdn-icons-png.flaticon.com/512/6526/6526846.png" class="img-fluid"  width="30" height="30"/></span>
                 </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasBuscador" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas offcanvas-end header" tabindex="-1" id="offcanvasBuscador" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Personalizar búsqueda</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

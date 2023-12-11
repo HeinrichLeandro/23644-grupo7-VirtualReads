@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar';
 import Buscador from '../Components/Buscador';
 import TarjetasHome from '../Components/TarjetasHome';
 import Recomendados from '../Components/Recomendados';
+import Footer from '../Components/Footer';
 
 
 // Home.jsx
@@ -24,6 +25,7 @@ export function Home({ onCardClick }) {
       <Buscador onBookData={handleBookData} />
       <Recomendados onBookData={handleBookData} />
       <TarjetasHome book={bookData} onCardClick={handleCardClick} />
+      <Footer/>
     </div>
   );
 }

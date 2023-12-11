@@ -2,6 +2,7 @@ import React from 'react';
 import { UserAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import { Home } from '../pages/Home';
+import './Estilos.css';
 function Navbar() {
   const {logOut} = UserAuth();
 
@@ -26,7 +27,7 @@ function Navbar() {
           <a className="navbar-brand" href="#">
             <img src="https://static.vecteezy.com/system/resources/thumbnails/000/550/980/small/user_icon_001.jpg" width="40" height="40" alt="imagen" />
           </a>
-          <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div className="offcanvas offcanvas-start header" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Usuario</h5>
               <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

@@ -1,3 +1,16 @@
+.header{
+    background-color: rgba(178, 187, 190, 0.9766107126444328);
+}
+
+.colorBuscador{
+    border: 0.1cm;
+    border-width: 0.2cm;
+    border-style: inset;
+    border-radius: 10%;
+    border-color: rgba(0, 41, 172, 0.7);
+    padding-bottom: 1%;
+}
+
 .contenedortarj{
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -18,6 +31,31 @@
 }
 
 .tarjHome{
+    min-width: fit-content;
+    min-height: fit-content;
+}
+
+.footer{
+    background-color: rgba(0, 41, 172, 1)
+    
+}
+
+.contenedorFooter{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    padding-left: 10%;
+
+}
+.contenedorFooter2{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    padding-left: 10%;
+
+}
+
+.textoFooter{
+    color: rgba(178, 187, 190);
+    padding: 1%;
     
 }
 
@@ -32,12 +70,12 @@
 }
 
 .recomendados{
-    margin-top:2%;
+    margin-top:1%;
 }
 
 .imgLibro{
     height: 300px;
-}
+    }
 
 @media only screen and (max-width: 768px) {
     .contenedortarj{
