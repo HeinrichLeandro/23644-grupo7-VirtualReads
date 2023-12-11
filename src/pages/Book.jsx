@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../Components/Navbar';
+import Buscador from '../Components/Buscador';
 import { useParams } from 'react-router-dom';
 
 export function Book({ selectedBook }) {
@@ -34,11 +36,14 @@ export function Book({ selectedBook }) {
 
   return (
     <div>
-      <h1>Detalles del Libro</h1>
+      <Navbar/>
+      <Buscador/>
+      <br />
+      <h3 className='text-center'>Detalles del Libro</h3>
       {book ? (
         <div>
-          <h2>{book.title}</h2>
-          <img src={book.imageLinks?.thumbnail} alt={book.title} />
+          <h2 className='text-center'>{book.title}</h2>
+          <img src={book.imageLinks?.thumbnail} alt={book.title} class="img-fluid rounded mx-auto d-block" />
           <p>Descripción: {book.description || 'Descripción no disponible'}</p>
           <p>Autor: {book.authors?.join(', ') || 'Desconocido'}</p>
           <p>Editorial: {book.publisher || 'Desconocido'}</p>
@@ -48,6 +53,7 @@ export function Book({ selectedBook }) {
           <p>Formato: {book.printType || 'Desconocido'}</p>
           <p>Clasificación: {book.categories?.join(', ') || 'Desconocido'}</p>
           <p>Fecha de Publicación: {book.publishedDate || 'Desconocido'}</p>
+          <p>Donde leerlo: <a href={book.previewLink || 'Desconocido'}>{book.title}</a></p>
         </div>
       ) : (
         <p>Libro no encontrado</p>
