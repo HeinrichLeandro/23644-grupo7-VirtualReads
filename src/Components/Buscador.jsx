@@ -24,7 +24,7 @@ function buscarLibros(){
   
     (author !== 'Autor' ? `&inauthor:${author}` : '') +
     (language !== 'Idioma' ? `&langRestrict=${language}` : '') +
-    `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=9`;
+    `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=40`;
 
     //  +
     // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +
@@ -57,7 +57,7 @@ function buscarLibros(){
         const apiUrl =
         'https://www.googleapis.com/books/v1/volumes?q=' +
         search +
-        `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=9`;
+        `&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&maxResults=40`;
     
         //  +
         // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +

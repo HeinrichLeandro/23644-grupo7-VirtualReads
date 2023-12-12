@@ -1,11 +1,41 @@
 import './Estilos.css';
-import React from 'react';
-import { useEffect } from 'react'
-import {Buscador} from './Buscador';
+import React ,{useState} from 'react';
+
+
 
 
 function Tarjeta({ book}) {
-  
+  const [inicio, setInicio]=useState(0);
+  const [final, setFinal]=useState(9);
+
+  function ira1(){
+    setInicio(0);
+    setFinal(9);
+  }
+
+  function ira2(){
+    setInicio(9);
+    setFinal(18);
+  }
+
+  function ira3(){
+    setInicio(18);
+    setFinal(27);
+  }
+  function pagAnt(){
+    if(inicio===0){
+      setInicio(0);
+      setFinal(9);
+    }
+    else{
+      setInicio(inicio-9);
+      setFinal(final-9);
+    }
+  }
+  function pagSig(){
+    setInicio(inicio+9);
+    setFinal(final+9);
+  }
 
   return (
     <div>
@@ -33,15 +63,15 @@ function Tarjeta({ book}) {
           </div>
         </div>
         
-      ))}
+      )).slice(inicio, final)}
       </div>
       <nav aria-label="Page navigation example">
   <ul className="pagination justify-content-center">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    <li class="page-item"><a class="page-link" onClick={pagAnt}href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" onClick={ira1} href="#">1</a></li>
+    <li class="page-item"><a class="page-link" onClick={ira2} href="#">2</a></li>
+    <li class="page-item"><a class="page-link" onClick={ira3} href="#">3</a></li>
+    <li class="page-item"><a class="page-link" onClick={pagSig} href="#">Next</a></li>
   </ul>
     </nav>
     </div>
