@@ -4,35 +4,40 @@
 
 .colorBuscador{
     border: 0.1cm;
-    border-width: 0.2cm;
-    border-style: inset;
-    border-radius: 10%;
+    border-width: 0.01cm;
+    border-style: solid;
+    border-radius: 15%;
     border-color: rgba(0, 41, 172, 0.7);
     padding-bottom: 1%;
+    background-color: rgba(178, 187, 190, 0.107126444328)
 }
 
 .contenedortarj{
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3,  auto);
     grid-gap: 10px;
     justify-content:center;
 }
 
 .contenedorHome{
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .tarjeta{
-    margin-top: 5%;
-    margin-left: 5%;
     margin-right: 5%;
-    max-width: 800px;
+    margin-left: 5%;
+    border: 0cm!important;
+
+   
 }
 
-.tarjHome{
-    min-width: fit-content;
-    min-height: fit-content;
+.row{
+    border-radius: 5%!important;
+    box-shadow: -4px 4px rgba(0, 0, 0, 0.1)!important;
+
+
+    
 }
 
 .footer{
@@ -87,11 +92,11 @@
         margin-right: 5%;
     }
 
-    .tarjeta2{
+    .tarjetaH2{
         display:none;
     }
 
-    .tarjeta3{
+    .tarjetaH3{
         display:none;
     }
 

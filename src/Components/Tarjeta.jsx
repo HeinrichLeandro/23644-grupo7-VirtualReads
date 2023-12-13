@@ -41,7 +41,7 @@ function Tarjeta({ book}) {
     <div>
     <div className='contenedortarj grid container'>
       {book.map((libro, index) => ( //Mapeo de la cantidad de items que devuelve la API
-        <div key={index} className={`card mb-3 tarjeta${index + 1}`}>
+        <div key={index} className={`card mb-3 tarjeta tarjeta${index + 1}`}>
           <div className="row g-0">
             <div className="col-md-6">
               <img src={libro.volumeInfo.imageLinks?.thumbnail || 'URL_IMAGEN_POR_DEFECTO'} className="img-fluid rounded-start imgLibro" alt={libro.volumeInfo.title} />
