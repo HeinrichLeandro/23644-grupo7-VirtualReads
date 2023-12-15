@@ -10,18 +10,8 @@ function TarjetasHome({book, onCardClick}) {
   const [inicio, setInicio]=useState(0);
   const [final, setFinal]=useState(3);
 
-  function pagSig(){
-    if(inicio===6){
-      setInicio(0);
-      setFinal(3);
-    }
-    else{
-    setInicio(inicio+3);
-    setFinal(final+3);
-    }
-  }
+    useEffect(() => {
 
-  useEffect(() => {
     const interval = setInterval(() => {
     if(inicio===6){
       setInicio(0);
@@ -31,7 +21,7 @@ function TarjetasHome({book, onCardClick}) {
     setInicio(inicio+3);
     setFinal(final+3);
     }
-    
+  
 }, 5000);
 return () => clearInterval(interval);
 },[inicio,final]);
