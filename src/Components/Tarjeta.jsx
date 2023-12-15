@@ -1,10 +1,10 @@
 import './Estilos.css';
 import React ,{useState} from 'react';
+import { Link } from 'react-router-dom';
 
 
 
-
-function Tarjeta({ book}) {
+function Tarjeta({ book, onCardClick}) {
   const [inicio, setInicio]=useState(0);
   const [final, setFinal]=useState(9);
 
@@ -44,7 +44,7 @@ function Tarjeta({ book}) {
         <div key={index} className={`card mb-3 tarjeta tarjeta${index + 1}`}>
           <div className="row g-0">
             <div className="col-md-6">
-              <img src={libro.volumeInfo.imageLinks?.thumbnail || 'URL_IMAGEN_POR_DEFECTO'} className="img-fluid rounded-start imgLibro" alt={libro.volumeInfo.title} />
+            <Link to={`/books/${index + 1}`} style={{textDecoration: 'none'}}><img src={libro.volumeInfo.imageLinks?.thumbnail || 'URL_IMAGEN_POR_DEFECTO'} className="img-fluid rounded-start imgLibro" alt={libro.volumeInfo.title} onClick={() => onCardClick(libro)} /></Link>
             </div>
             <div className="col-md-6">
               <div className="card-body text-start">

@@ -23,7 +23,7 @@ export function MisRutas() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<RequireAuth><Home onCardClick={handleCardClick} /></RequireAuth>} />
-        <Route path="/buscar" element={<RequireAuth><Buscar /></RequireAuth>} />
+        <Route path="/buscar" element={<RequireAuth><Buscar onCardClick={handleCardClick} /></RequireAuth>} />
         <Route path="/login" element={<Login />} />
         <Route path="/books/:id" element={<RequireAuth><Book selectedBook={selectedBook} /></RequireAuth>} />
       </Routes>
