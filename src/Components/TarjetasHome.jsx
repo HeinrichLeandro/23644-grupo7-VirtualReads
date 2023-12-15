@@ -1,12 +1,41 @@
 import { render } from '@testing-library/react';
 import './Estilos.css';
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 
 
 
 function TarjetasHome({book, onCardClick}) {
+  const [inicio, setInicio]=useState(0);
+  const [final, setFinal]=useState(3);
+
+  function pagSig(){
+    if(inicio===6){
+      setInicio(0);
+      setFinal(3);
+    }
+    else{
+    setInicio(inicio+3);
+    setFinal(final+3);
+    }
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+    if(inicio===6){
+      setInicio(0);
+      setFinal(3);
+    }
+    else{
+    setInicio(inicio+3);
+    setFinal(final+3);
+    }
+    
+}, 5000);
+return () => clearInterval(interval);
+},[inicio,final]);
+  
 
 
   return (
@@ -33,7 +62,7 @@ function TarjetasHome({book, onCardClick}) {
             </div>
           </div>
         </div>
-      ))}
+      )).slice(inicio, final)}
     </div>
   );
 }

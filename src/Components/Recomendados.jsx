@@ -9,7 +9,7 @@ function Recomendados({onBookData}) {
 
     // var search = document.getElementById('searchInput').value;
     const apiUrl =
-    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=3' ;
+    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=9' ;
 
     //  +
     // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +
@@ -42,7 +42,7 @@ function Recomendados({onBookData}) {
   function novedades(){
 
     const apiUrl =
-    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=newest&maxResults=3' ;
+    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=newest&maxResults=9' ;
 
     //  +
     // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +
@@ -72,7 +72,7 @@ function Recomendados({onBookData}) {
   function relevancia(){
 
     const apiUrl =
-    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=3' ;
+    'https://www.googleapis.com/books/v1/volumes?q=a&key=AIzaSyDfeBesAAxCA8CyF3ebH1-ea_wYUna70rQ&orderBy=relevance&maxResults=9' ;
 
     //  +
     // (publisher !== 'Editorial' ? `&inpublisher=${publisher}` : '') +

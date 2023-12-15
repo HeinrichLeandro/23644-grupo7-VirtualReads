@@ -48,7 +48,7 @@ function Tarjeta({ book, onCardClick}) {
             </div>
             <div className="col-md-6">
               <div className="card-body text-start">
-                <h5 className="card-title">{libro.volumeInfo.title}</h5>
+                <Link to={`/books/${index + 1}`} style={{textDecoration: 'none'}}><h5 className="card-title">{libro.volumeInfo.title}</h5></Link>
                 <p className="card-text texto"><small className="text-body-secondary">Autor: {libro.volumeInfo.authors?.[0] || 'Desconocido'}</small></p>
                 {/* <p className="card-text texto"><small>{libro.volumeInfo.description || 'Descripción no disponible'}</small></p> */}
                 <p className="card-text texto"><small>Editorial: {libro.volumeInfo.publisher || 'Desconocido'}</small></p>
