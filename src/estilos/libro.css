@@ -1,0 +1,41 @@
+/* Estilos generales */
+body {
+    background-color: #f0f0f0; /* Gris claro */
+    color: #333; /* Texto oscuro */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Estilos específicos para la sección de detalles del libro */
+  .book-details {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Sección de puntuación */
+  .rating-section {
+    margin-top: 20px;
+  }
+  
+  /* Visor embebido de Google Books */
+  .embed-viewer {
+    margin-top: 20px;
+  }
+  

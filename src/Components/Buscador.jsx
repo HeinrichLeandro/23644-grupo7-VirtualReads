@@ -117,14 +117,6 @@ function buscarLibros(){
                             </select>
                             <br/>
 
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Editorial</option>
-                                <option value="1">Presencial</option>
-                                <option value="2">Virtual</option>
-                                <option value="3">Sincrónico</option>
-                                <option value="4">Asincrónico</option>
-                            </select>
-                            <br/>
 
 
                             <DatePicker selected={startDate2} onChange={(date) => setStartDate2(date)} showYearPicker dateFormat="yyyy"  />
@@ -135,14 +127,6 @@ function buscarLibros(){
 
                             <br/>
 
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Codigo ISBN</option>
-                                <option value="1">Pendiente</option>
-                                <option value="2">Pendiente</option>
-                                <option value="3">Pendiente</option>
-                                <option value="4">Pendiente</option>
-                            </select>
-                            <br/>
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label float-start px-2">Autor</label>
@@ -159,14 +143,6 @@ function buscarLibros(){
                             </select>
                             <br/>
 
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Edición</option>
-                                <option value="1">Pendiente</option>
-                                <option value="2">Pendiente</option>
-                                <option value="3">Pendiente</option>
-                                <option value="4">Pendiente</option>
-                            </select>
-                            <br/>
 
                         </ul>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
