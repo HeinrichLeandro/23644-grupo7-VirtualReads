@@ -109,9 +109,6 @@ function Recomendados({onBookData}) {
             <a class="nav-link link-dark" onClick={relevancia} aria-current="page" href="#">Recomendados</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link link-dark" href="#">Mas Vendidos</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link link-dark" onClick={novedades} href="#">Novedades</a>
         </li>
     </ul>

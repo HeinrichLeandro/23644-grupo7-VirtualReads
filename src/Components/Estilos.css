@@ -123,3 +123,11 @@
     }
 
 }
+
+.logo{
+    height: 70px;
+    
+}
+#navbar{
+    background-color: rgba(0, 41, 172, 1)!important;
+}
